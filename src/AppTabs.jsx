@@ -1,21 +1,11 @@
-import React, { useContext } from 'react';
-import { Text, Button } from 'react-native';
+import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AntDesign, EvilIcons } from '@expo/vector-icons';
 
-import { Center } from './Center';
-import { AuthContext } from './AuthProvider';
 import HomeStack from './HomeStack';
+import SearchStack from './SearchStack';
 
 const Tabs = createBottomTabNavigator();
-
-const Search = () => {
-  return (
-    <Center>
-      <Text>search</Text>
-    </Center>
-  );
-};
 
 export const AppTabs = ({}) => {
   return (
@@ -35,7 +25,7 @@ export const AppTabs = ({}) => {
       }}
     >
       <Tabs.Screen name="Home" component={HomeStack} />
-      <Tabs.Screen name="Search" component={Search} />
+      <Tabs.Screen name="Search" component={SearchStack} />
     </Tabs.Navigator>
   );
 };
